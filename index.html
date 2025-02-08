@@ -1,1 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호텔 메시지 서비스</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .hotel-logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .hotel-logo img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .hotel-logo h1 {
+            font-size: 24px;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="number"]:focus {
+            border-color: #0066ff;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .language-btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .language-btn:hover {
+            background-color: #e9ecef;
+            transform: translateY(-1px);
+        }
+
+        .language-btn.active {
+            background-color: #0066ff;
+            color: white;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0066ff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #0052cc;
+            transform: translateY(-1px);
+        }
+
+        .submit-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+            padding: 8px;
+            border-radius: 4px;
+            background-color: #ffe6e6;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+
+            .language-btn {
+                min-width: calc(50% - 5px);
+            }
+
+            .hotel-logo h1 {
+                font-size: 20px;
+            }
+        }
+
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #0066ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hotel-logo">
+            <img src="images/logo.png" alt="호텔 로고">
+            <h1>호텔 메시지 서비스</h1>
+        </div>
+
+        <form id="roomForm">
+            <div class="form-group">
+                <label for="roomNumber">객실 번호 / Room Number / 部屋番号 / 房间号</label>
+                <input type="number" id="roomNumber" min="1" max="219" required>
+                <div id="roomError" class="error-message">유효한 객실 번호를 입력해주세요.</div>
+            </div>
+
+            <div class="form-group">
+                <label>언어 선택 / Select Language / 言語選択 / 语言选择</label>
+                <div class="language-selector">
+                    <button type="button" class="language-btn" data-lang="ko">한국어</button>
+                    <button type="button" class="language-btn" data-lang="en">English</button>
+                    <button type="button" class="language-btn" data-lang="ja">日本語</button>
+                    <button type="button" class="language-btn" data-lang="zh">中文</button>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" disabled>
+                시작하기 / Start / 開始 / 开始
+            </button>
+        </form>
+    </div>
+
+    <div class="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <script>
+        // DOM 요소
+        const languageBtns = document.querySelectorAll('.language-btn');
+        const form = document.getElementById('roomForm');
+        const roomInput = document.getElementById('roomNumber');
+        const roomError = document.getElementById('roomError');
+        const submitBtn = document.querySelector('.submit-btn');
+        const loading = document.querySelector('.loading');
+
+        let selectedLang = '';
+
+        // 언어 선택 버튼 이벤트
+        languageBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 기존 선택 해제
+                languageBtns.forEach(b => b.classList.remove('active'));
+                // 새로운 선택
+                btn.classList.add('active');
+                selectedLang = btn.dataset.lang;
+                validateForm();
+            });
+        });
+
+        // 폼 유효성 검사
+        function validateForm() {
+            const roomNumber = roomInput.value;
+            const isValidRoom = roomNumber >= 1 && roomNumber <= 219;
+            const isValidLang = selectedLang !== '';
+            
+            submitBtn.disabled = !(isValidRoom && isValidLang);
+        }
+
+        // 객실 번호 입력 이벤트
+        roomInput.addEventListener('input', () => {
+            roomError.style.display = 'none';
+            validateForm();
+        });
+
+        // 폼 제출 이벤트
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const roomNumber = roomInput.value;
+            
+            // 객실 번호 유효성 검사
+            if (roomNumber < 1 || roomNumber > 219) {
+                roomError.style.display = 'block';
+                return;
+            }
+
+            // 로딩 표시
+            loading.style.display = 'flex';
+
+            // 다음 페이지로 이동
+            setTimeout(() => {
+                window.location.href = `message.html?room=${roomNumber}&lang=${selectedLang}`;
+            }, 500);
+        });
+
+        // 초기 폼 상태 설정
+        validateForm();
+    </script>
+</body>
+</html>
