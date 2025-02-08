@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호텔 메시지 작성</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .message-container {
+            margin-top: 20px;
+        }
+
+        .selected-info {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .selected-info p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .message-input {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            font-size: 16px;
+            resize: vertical;
+            margin-bottom: 20px;
+            font-family: inherit;
+        }
+
+        .message-input:focus {
+            border-color: #0066ff;
+            outline: none;
+        }
+
+        .category-selector {
+            margin-bottom: 20px;
+        }
+
+        .category-btn {
+            padding: 10px 15px;
+            margin: 0 5px 5px 0;
+            border: 2px solid #e1e1e1;
+            border-radius: 20px;
+            background: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn.active {
+            background-color: #0066ff;
+            color: white;
+            border-color: #0066ff;
+        }
+
+        .back-btn {
+            background-color: #6c757d;
+            margin-right: 10px;
+        }
+
+        .back-btn:hover {
+            background-color: #5a6268;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        #translatedMessage {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #666;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hotel-logo">
+            <img src="./images/hotel-logo.png" alt="호텔 로고">
+            <h1>메시지 작성</h1>
+        </div>
+
+        <div class="selected-info">
+            <p id="roomInfo">객실 번호: </p>
+            <p id="languageInfo">선택 언어: </p>
+        </div>
+
+        <div class="message-container">
+            <div class="form-group">
+                <label>카테고리 선택</label>
+                <div class="category-selector">
+                    <button type="button" class="category-btn" data-category="cleaning">청소 요청</button>
+                    <button type="button" class="category-btn" data-category="amenity">어메니티 요청</button>
+                    <button type="button" class="category-btn" data-category="maintenance">수리 요청</button>
+                    <button type="button" class="category-btn" data-category="other">기타 문의</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="messageInput">메시지 내용</label>
+                <textarea id="messageInput" class="message-input" placeholder="메시지를 입력하세요"></textarea>
+                <div id="translatedMessage"></div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="submit-btn back-btn" onclick="location.href='index.html'">뒤로가기</button>
+                <button type="button" class="submit-btn" id="sendButton" disabled>메시지 전송</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/message.js"></script>
+</body>
+</html>
