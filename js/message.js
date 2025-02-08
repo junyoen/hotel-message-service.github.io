@@ -103,22 +103,19 @@ function updatePageLanguage(language) {
     languageInfo.textContent = texts.selectedLanguage + languageNames[language];
     
     // 카테고리 관련 텍스트 업데이트
-    document.querySelector('.form-group label').textContent = texts.categorySelect;
+    document.getElementById('categoryLabel').textContent = texts.categorySelect;
     document.querySelector('[data-category="cleaning"]').textContent = texts.categories.cleaning;
     document.querySelector('[data-category="amenity"]').textContent = texts.categories.amenity;
     document.querySelector('[data-category="maintenance"]').textContent = texts.categories.maintenance;
     document.querySelector('[data-category="other"]').textContent = texts.categories.other;
     
     // 메시지 입력 관련 텍스트 업데이트
-    const messageLabel = document.querySelector('label[for="messageInput"]');
-    if (messageLabel) {
-        messageLabel.textContent = texts.messageContent;
-    }
+    document.getElementById('messageLabel').textContent = texts.messageContent;
     messageInput.placeholder = texts.messagePlaceholder;
     
     // 버튼 텍스트 업데이트
     document.querySelector('.back-btn').textContent = texts.backButton;
-    sendButton.textContent = texts.sendButton;
+    document.getElementById('sendButton').textContent = texts.sendButton;
 }
 
 // 폼 유효성 검사
