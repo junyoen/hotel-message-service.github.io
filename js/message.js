@@ -3,6 +3,22 @@ const urlParams = new URLSearchParams(window.location.search);
 const roomNumber = urlParams.get('room');
 const selectedLanguage = urlParams.get('lang');
 
+// DOM 요소 선택
+const roomInfo = document.getElementById('roomInfo');
+const languageInfo = document.getElementById('languageInfo');
+const messageInput = document.getElementById('messageInput');
+const sendButton = document.getElementById('sendButton');
+const categoryButtons = document.querySelectorAll('.category-btn');
+const translatedMessage = document.getElementById('translatedMessage');
+
+// 언어 표시 텍스트
+const languageNames = {
+    'ko': '한국어',
+    'en': 'English',
+    'ja': '日本語',
+    'zh': '中文'
+};
+
 // 다국어 텍스트 정의
 const translations = {
     'ko': {
@@ -71,17 +87,20 @@ const translations = {
     }
 };
 
+// 선택된 카테고리
+let selectedCategory = '';
+
 // 페이지 텍스트 업데이트 함수
 function updatePageLanguage(language) {
     const texts = translations[language] || translations['en']; // 기본값은 영어
     
     // 페이지 제목 업데이트
     document.querySelector('.hotel-logo h1').textContent = texts.pageTitle;
-    document.title = texts.pageTitle;  // 브라우저 탭 제목도 업데이트
+    document.title = texts.pageTitle;
     
     // 룸 정보 및 언어 정보 업데이트
-    document.getElementById('roomInfo').textContent = texts.roomNumber + roomNumber;
-    document.getElementById('languageInfo').textContent = texts.selectedLanguage + languageNames[language];
+    roomInfo.textContent = texts.roomNumber + roomNumber;
+    languageInfo.textContent = texts.selectedLanguage + languageNames[language];
     
     // 카테고리 관련 텍스트 업데이트
     document.querySelector('.form-group label').textContent = texts.categorySelect;
@@ -99,35 +118,14 @@ function updatePageLanguage(language) {
     
     // 버튼 텍스트 업데이트
     document.querySelector('.back-btn').textContent = texts.backButton;
-    document.getElementById('sendButton').textContent = texts.sendButton;
+    sendButton.textContent = texts.sendButton;
 }
 
-// URL에서 선택된 언어 가져오기 후 바로 언어 업데이트 실행
-const selectedLanguage = urlParams.get('lang');
-updatePageLanguage(selectedLanguage);
-
-// DOM 요소
-const roomInfo = document.getElementById('roomInfo');
-const languageInfo = document.getElementById('languageInfo');
-const messageInput = document.getElementById('messageInput');
-const sendButton = document.getElementById('sendButton');
-const categoryButtons = document.querySelectorAll('.category-btn');
-const translatedMessage = document.getElementById('translatedMessage');
-
-// 언어 표시 텍스트
-const languageNames = {
-    'ko': '한국어',
-    'en': 'English',
-    'ja': '日本語',
-    'zh': '中文'
-};
-
-// 선택된 카테고리
-let selectedCategory = '';
-
-// 초기 정보 표시
-roomInfo.textContent = `객실 번호: ${roomNumber}`;
-languageInfo.textContent = `선택 언어: ${languageNames[selectedLanguage] || selectedLanguage}`;
+// 폼 유효성 검사
+function validateForm() {
+    const isValid = selectedCategory && messageInput.value.trim().length > 0;
+    sendButton.disabled = !isValid;
+}
 
 // 카테고리 버튼 이벤트
 categoryButtons.forEach(btn => {
@@ -143,12 +141,6 @@ categoryButtons.forEach(btn => {
 
 // 메시지 입력 이벤트
 messageInput.addEventListener('input', validateForm);
-
-// 폼 유효성 검사
-function validateForm() {
-    const isValid = selectedCategory && messageInput.value.trim().length > 0;
-    sendButton.disabled = !isValid;
-}
 
 // 메시지 전송 버튼 이벤트
 sendButton.addEventListener('click', async () => {
@@ -174,3 +166,6 @@ sendButton.addEventListener('click', async () => {
         alert('메시지 전송에 실패했습니다. 다시 시도해 주세요.');
     }
 });
+
+// 페이지 초기화
+updatePageLanguage(selectedLanguage);
