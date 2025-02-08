@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>호텔 메시지 서비스</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
+        /* 이전 스타일 유지 */
         * {
             margin: 0;
             padding: 0;
@@ -34,7 +34,7 @@
         }
 
         .hotel-logo img {
-            max-width: 200px;
+            width: 180px;
             height: auto;
             margin-bottom: 15px;
         }
@@ -145,46 +145,19 @@
                 font-size: 20px;
             }
         }
-
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.8);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .loading-spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #0066ff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="hotel-logo">
-            <img src="images/logo.png" alt="호텔 로고">
+            <img src="./images/logo.png" alt="호텔 로고">
             <h1>호텔 메시지 서비스</h1>
         </div>
 
         <form id="roomForm">
             <div class="form-group">
                 <label for="roomNumber">객실 번호 / Room Number / 部屋番号 / 房间号</label>
-                <input type="number" id="roomNumber" min="1" max="219" required>
+                <input type="number" id="roomNumber" required>
                 <div id="roomError" class="error-message">유효한 객실 번호를 입력해주세요.</div>
             </div>
 
@@ -204,18 +177,44 @@
         </form>
     </div>
 
-    <div class="loading">
-        <div class="loading-spinner"></div>
-    </div>
-
     <script>
+        // 유효한 객실 번호 배열 생성
+        function generateValidRooms() {
+            const validRooms = new Set();
+            
+            // 5층
+            for (let i = 501; i <= 513; i++) {
+                validRooms.add(i);
+            }
+            
+            // 6층-20층
+            for (let floor = 6; floor <= 20; floor++) {
+                if (floor === 13) continue; // 13층 제외
+                for (let room = 1; room <= 13; room++) {
+                    validRooms.add(floor * 100 + room);
+                }
+            }
+            
+            // 21층과 22층 (9호 제외)
+            for (let floor of [21, 22]) {
+                for (let room = 1; room <= 13; room++) {
+                    if (room !== 9) { // 9호 제외
+                        validRooms.add(floor * 100 + room);
+                    }
+                }
+            }
+            
+            return validRooms;
+        }
+
+        const validRooms = generateValidRooms();
+        
         // DOM 요소
         const languageBtns = document.querySelectorAll('.language-btn');
         const form = document.getElementById('roomForm');
         const roomInput = document.getElementById('roomNumber');
         const roomError = document.getElementById('roomError');
         const submitBtn = document.querySelector('.submit-btn');
-        const loading = document.querySelector('.loading');
 
         let selectedLang = '';
 
@@ -233,38 +232,35 @@
 
         // 폼 유효성 검사
         function validateForm() {
-            const roomNumber = roomInput.value;
-            const isValidRoom = roomNumber >= 1 && roomNumber <= 219;
+            const roomNumber = parseInt(roomInput.value);
+            const isValidRoom = validRooms.has(roomNumber);
             const isValidLang = selectedLang !== '';
             
             submitBtn.disabled = !(isValidRoom && isValidLang);
+            
+            if (roomInput.value && !isValidRoom) {
+                roomError.style.display = 'block';
+            } else {
+                roomError.style.display = 'none';
+            }
         }
 
         // 객실 번호 입력 이벤트
-        roomInput.addEventListener('input', () => {
-            roomError.style.display = 'none';
-            validateForm();
-        });
+        roomInput.addEventListener('input', validateForm);
 
         // 폼 제출 이벤트
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            const roomNumber = roomInput.value;
+            const roomNumber = parseInt(roomInput.value);
             
-            // 객실 번호 유효성 검사
-            if (roomNumber < 1 || roomNumber > 219) {
+            if (!validRooms.has(roomNumber)) {
                 roomError.style.display = 'block';
                 return;
             }
 
-            // 로딩 표시
-            loading.style.display = 'flex';
-
             // 다음 페이지로 이동
-            setTimeout(() => {
-                window.location.href = `message.html?room=${roomNumber}&lang=${selectedLang}`;
-            }, 500);
+            window.location.href = `message.html?room=${roomNumber}&lang=${selectedLang}`;
         });
 
         // 초기 폼 상태 설정
