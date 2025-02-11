@@ -114,8 +114,8 @@ async function translateText(text) {
     }
 
     try {
-        // 선택된 언어로 작성된 텍스트를 한국어로 번역
-        const response = await fetch(`https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=${selectedLanguage}&to=ko`, {
+        // 언어 감지는 자동으로 하고, 무조건 한국어로 번역
+        const response = await fetch('https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=ko', {
             method: 'POST',
             headers: {
                 'Ocp-Apim-Subscription-Key': TRANSLATOR_KEY,
@@ -127,16 +127,11 @@ async function translateText(text) {
             }])
         });
 
-        console.log('Selected Language:', selectedLanguage);
-        console.log('Translating to: ko');
-
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
-        console.log('Translation Response:', data);
-
         if (data && data[0] && data[0].translations && data[0].translations[0]) {
             const translatedText = data[0].translations[0].text;
             translatedMessage.textContent = translatedText;
