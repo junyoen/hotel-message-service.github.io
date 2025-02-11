@@ -113,39 +113,39 @@ async function translateText(text) {
         return;
     }
 
-    const targetLang = selectedLanguage === 'zh' ? 'zh-Hans' : selectedLanguage;
+    // 한국어인 경우 선택된 언어로, 다른 언어인 경우 한국어로 번역
+    const targetLang = selectedLanguage === 'ko' ? translateLanguageCodes[selectedLanguage] : 'ko';
 
     try {
-        const response = await fetch('https://api.cognitive.microsofttranslator.com/translate', {
+        const response = await fetch(`https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=${targetLang}`, {
             method: 'POST',
             headers: {
                 'Ocp-Apim-Subscription-Key': TRANSLATOR_KEY,
                 'Ocp-Apim-Subscription-Region': TRANSLATOR_REGION,
-                'Content-Type': 'application/json',
-                'Accept': '*/*'
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify([{
-                    'text': text
-            }]),
-            params: {
-                'api-version': '3.0',
-                'from': 'auto',
-                'to': targetLang
-            }
+            body: JSON.stringify([
+                {
+                    text: text
+                }
+            ])
         });
 
         if (!response.ok) {
-            throw new Error('HTTP error! status: ${response.status}');
+            throw new Error(`Translation failed with status: ${response.status}`);
         }
 
         const data = await response.json();
-        const translatedText = data[0].translations[0].text;
-        
-        // 번역된 텍스트 표시
-        translatedMessage.textContent = translatedText;
-        translatedMessage.style.display = 'block';
-        
-        return translatedText;
+        console.log('Translation response:', data); // 응답 데이터 확인
+
+        if (data && data[0] && data[0].translations && data[0].translations[0]) {
+            const translatedText = data[0].translations[0].text;
+            translatedMessage.textContent = translatedText;
+            translatedMessage.style.display = 'block';
+            return translatedText;
+        } else {
+            throw new Error('Invalid translation response format');
+        }
     } catch (error) {
         console.error('Translation error:', error);
         translatedMessage.textContent = '번역 중 오류가 발생했습니다.';
