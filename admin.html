@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호텔 메시지 관리</title>
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="hotel-logo">
+            <img src="./images/hotel-logo.png" alt="호텔 로고">
+            <h1>메시지 관리</h1>
+        </div>
+
+        <div class="floor-list">
+            <!-- 5층부터 22층까지 (13층 제외) -->
+            <div class="floor-item">
+                <div class="floor-header">
+                    <span class="floor-number">5층</span>
+                    <span class="new-message-badge" id="floor-5-badge">0</span>
+                </div>
+                <div class="room-list" id="floor-5-rooms">
+                    <!-- 룸 번호는 자바스크립트로 동적 생성 -->
+                </div>
+            </div>
+            <!-- 다른 층들도 동일한 구조로 반복 -->
+        </div>
+    </div>
+
+    <!-- 메시지 팝업 -->
+    <div class="message-popup" id="messagePopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2>메시지 내용</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="message-info">
+                <p>객실 번호: <span id="popupRoomNumber"></span></p>
+                <p>카테고리: <span id="popupCategory"></span></p>
+                <p>시간: <span id="popupTime"></span></p>
+            </div>
+            <div class="message-content">
+                <div class="original-message">
+                    <h3>원본 메시지</h3>
+                    <p id="popupOriginalMessage"></p>
+                </div>
+                <div class="translated-message">
+                    <h3>번역된 메시지</h3>
+                    <p id="popupTranslatedMessage"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/admin.js"></script>
+</body>
+</html>
