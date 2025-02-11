@@ -113,19 +113,25 @@ async function translateText(text) {
         return;
     }
 
+    const targetLang = selectedLanguage === 'zh' ? 'zh-Hans' : selectedLanguage;
+
     try {
-        const response = await fetch('https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=auto&to=' + translateLanguageCodes[selectedLanguage], {
+        const response = await fetch('https://api.cognitive.microsofttranslator.com/translate', {
             method: 'POST',
             headers: {
                 'Ocp-Apim-Subscription-Key': TRANSLATOR_KEY,
                 'Ocp-Apim-Subscription-Region': TRANSLATOR_REGION,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': '*/*'
             },
-            body: JSON.stringify([
-                {
+            body: JSON.stringify([{
                     'text': text
-                }
-            ])
+            }]),
+            params: {
+                'api-version': '3.0',
+                'from': 'auto',
+                'to': targetLang
+            }
         });
 
         if (!response.ok) {
