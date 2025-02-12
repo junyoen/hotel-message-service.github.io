@@ -201,22 +201,57 @@ messageInput.addEventListener('input', () => {
 });
 
 // 메시지 전송 버튼 이벤트
+const categoryNames = {
+    'cleaning': '청소 요청',
+    'amenity': '어메니티 요청',
+    'maintenance': '수리 요청',
+    'other': '기타 문의'
+};
+
 sendButton.addEventListener('click', async () => {
     const originalMessage = messageInput.value.trim();
     const translatedText = await translateText(originalMessage);
-    
-    const messageData = {
-        roomNumber,
-        language: selectedLanguage,
-        category: selectedCategory,
-        originalMessage,
-        translatedMessage: translatedText,
-        timestamp: new Date().toISOString()
-    };
+    const currentTime = new Date().toLocaleString();
 
+    // 텔레그램 메시지 형식
+    const telegramMessage = '
+📢 새로운 요청
+방번호: ${roomNumber}
+구분: ${categoryNames[selectedCategory]}
+메시지: ${originalMessage}
+번역: ${translatedText}
+시간: ${currentTime}
+';
+    
+    const TELEGRAM_BOT_TOKEN = '7641859647:AAF9SGLlCpkXAQNQFt9SBQJkJYDgGsdXSts';
+    const TELEGRAM_CHAT_ID = '7797882571';
+    
     try {
-        // TODO: 실제 서버로 메시지 전송 구현
-        console.log('전송할 메시지:', messageData);
+        // 텔레그램으로 메시지 전송
+        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                chat_id: TELEGRAM_CHAT_ID,
+                text: telegramMessage,
+                parse_mode: 'HTML',
+                reply_markup: {
+                    inline_keyboard: [[
+                        {
+                            text: '✅ 처리완료',
+                            callback_data: `complete_${roomNumber}`
+                        }
+                    ]]
+                }
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('메시지 전송 실패');
+        }
+
         alert('메시지가 전송되었습니다.');
         
         // 입력 필드 초기화
@@ -230,6 +265,7 @@ sendButton.addEventListener('click', async () => {
         alert('메시지 전송에 실패했습니다. 다시 시도해 주세요.');
     }
 });
+
 
 // 페이지 초기화
 updatePageLanguage(selectedLanguage);
