@@ -1,0 +1,545 @@
+2025-02-10 00:47:47,058 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/getMe "HTTP/1.1 200 OK"
+2025-02-10 00:47:48,286 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:47:54,529 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:51:05,017 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/getMe "HTTP/1.1 200 OK"
+2025-02-10 00:51:06,259 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:51:12,506 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:54:39,931 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/getMe "HTTP/1.1 200 OK"
+2025-02-10 00:54:41,328 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:54:47,577 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:55:16,097 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/getMe "HTTP/1.1 200 OK"
+2025-02-10 00:57:37,590 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/getMe "HTTP/1.1 200 OK"
+2025-02-10 00:57:39,678 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:57:43,718 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:57:47,577 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:57:51,467 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:57:55,518 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:57:59,535 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:03,487 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:07,559 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:10,827 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:14,492 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:18,297 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:22,369 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:26,065 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:29,980 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:33,696 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:37,266 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:40,766 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:44,377 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:47,962 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:51,477 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:55,030 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 00:58:57,577 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:13:09,585 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/getMe "HTTP/1.1 200 OK"
+2025-02-10 01:13:11,513 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:13:15,342 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:13:19,039 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:13:22,795 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:13:26,548 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:13:30,382 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:13:34,219 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:13:38,072 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:13:41,233 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:13:44,738 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:13:48,276 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:13:52,089 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:13:55,633 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:13:59,401 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:14:02,938 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:14:06,557 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:14:10,388 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:14:13,890 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:14:17,241 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:14:20,569 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:14:24,001 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:14:26,595 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:25:27,655 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/getMe "HTTP/1.1 200 OK"
+2025-02-10 01:25:28,978 - INFO - NOBL 분석:
+2025-02-10 01:25:29,000 - INFO - 현재가: $101.02999877929688
+2025-02-10 01:25:29,001 - INFO - 연간 배당률: $0
+2025-02-10 01:25:29,002 - INFO - 배당수익률: 0.0%
+2025-02-10 01:25:29,002 - INFO - 보유 주식 수: 14
+2025-02-10 01:25:29,002 - INFO - 총 연간 배당금: $0
+2025-02-10 01:25:29,528 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:25:32,694 - INFO - BMY 분석:
+2025-02-10 01:25:32,694 - INFO - 현재가: $56.849998474121094
+2025-02-10 01:25:32,695 - INFO - 연간 배당률: $2.48
+2025-02-10 01:25:32,695 - INFO - 배당수익률: 4.362357197122758%
+2025-02-10 01:25:32,695 - INFO - 보유 주식 수: 60
+2025-02-10 01:25:32,695 - INFO - 총 연간 배당금: $148.8
+2025-02-10 01:25:33,220 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:25:36,350 - INFO - C 분석:
+2025-02-10 01:25:36,351 - INFO - 현재가: $81.72000122070312
+2025-02-10 01:25:36,351 - INFO - 연간 배당률: $2.24
+2025-02-10 01:25:36,351 - INFO - 배당수익률: 2.74106701730263%
+2025-02-10 01:25:36,351 - INFO - 보유 주식 수: 10
+2025-02-10 01:25:36,351 - INFO - 총 연간 배당금: $22.400000000000002
+2025-02-10 01:25:36,921 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:25:40,152 - INFO - CL 분석:
+2025-02-10 01:25:40,152 - INFO - 현재가: $86.76000213623047
+2025-02-10 01:25:40,152 - INFO - 연간 배당률: $2.0
+2025-02-10 01:25:40,152 - INFO - 배당수익률: 2.3052097173298844%
+2025-02-10 01:25:40,152 - INFO - 보유 주식 수: 11
+2025-02-10 01:25:40,152 - INFO - 총 연간 배당금: $22.0
+2025-02-10 01:25:40,731 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:25:44,021 - INFO - CVX 분석:
+2025-02-10 01:25:44,021 - INFO - 현재가: $152.6199951171875
+2025-02-10 01:25:44,021 - INFO - 연간 배당률: $6.52
+2025-02-10 01:25:44,022 - INFO - 배당수익률: 4.27204836102484%
+2025-02-10 01:25:44,022 - INFO - 보유 주식 수: 18
+2025-02-10 01:25:44,022 - INFO - 총 연간 배당금: $117.35999999999999
+2025-02-10 01:25:44,548 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:25:47,844 - INFO - JNJ 분석:
+2025-02-10 01:25:47,844 - INFO - 현재가: $153.1199951171875
+2025-02-10 01:25:47,844 - INFO - 연간 배당률: $4.96
+2025-02-10 01:25:47,844 - INFO - 배당수익률: 3.2392895494830425%
+2025-02-10 01:25:47,844 - INFO - 보유 주식 수: 13
+2025-02-10 01:25:47,844 - INFO - 총 연간 배당금: $64.48
+2025-02-10 01:25:48,809 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:25:51,911 - INFO - JPM 분석:
+2025-02-10 01:25:51,912 - INFO - 현재가: $275.79998779296875
+2025-02-10 01:25:51,912 - INFO - 연간 배당률: $5.0
+2025-02-10 01:25:51,912 - INFO - 배당수익률: 1.8129079845185803%
+2025-02-10 01:25:51,912 - INFO - 보유 주식 수: 1
+2025-02-10 01:25:51,912 - INFO - 총 연간 배당금: $5.0
+2025-02-10 01:25:52,435 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:25:55,702 - INFO - KO 분석:
+2025-02-10 01:25:55,702 - INFO - 현재가: $63.84000015258789
+2025-02-10 01:25:55,702 - INFO - 연간 배당률: $1.94
+2025-02-10 01:25:55,702 - INFO - 배당수익률: 3.038847110531152%
+2025-02-10 01:25:55,702 - INFO - 보유 주식 수: 18
+2025-02-10 01:25:55,702 - INFO - 총 연간 배당금: $34.92
+2025-02-10 01:25:56,237 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:25:58,875 - INFO - KVUE 분석:
+2025-02-10 01:25:58,875 - INFO - 현재가: $20.18000030517578
+2025-02-10 01:25:58,875 - INFO - 연간 배당률: $0.82
+2025-02-10 01:25:58,875 - INFO - 배당수익률: 4.063429076310201%
+2025-02-10 01:25:58,875 - INFO - 보유 주식 수: 10
+2025-02-10 01:25:58,875 - INFO - 총 연간 배당금: $8.2
+2025-02-10 01:25:59,441 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:26:02,359 - INFO - MET 분석:
+2025-02-10 01:26:02,359 - INFO - 현재가: $83.91999816894531
+2025-02-10 01:26:02,359 - INFO - 연간 배당률: $2.18
+2025-02-10 01:26:02,359 - INFO - 배당수익률: 2.597712163447963%
+2025-02-10 01:26:02,359 - INFO - 보유 주식 수: 6
+2025-02-10 01:26:02,359 - INFO - 총 연간 배당금: $13.080000000000002
+2025-02-10 01:26:02,880 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:26:05,807 - INFO - O 분석:
+2025-02-10 01:26:05,808 - INFO - 현재가: $54.119998931884766
+2025-02-10 01:26:05,808 - INFO - 연간 배당률: $3.17
+2025-02-10 01:26:05,808 - INFO - 배당수익률: 5.857354143686792%
+2025-02-10 01:26:05,808 - INFO - 보유 주식 수: 70
+2025-02-10 01:26:05,808 - INFO - 총 연간 배당금: $221.9
+2025-02-10 01:26:06,346 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:26:09,562 - INFO - PG 분석:
+2025-02-10 01:26:09,562 - INFO - 현재가: $167.97000122070312
+2025-02-10 01:26:09,562 - INFO - 연간 배당률: $4.03
+2025-02-10 01:26:09,562 - INFO - 배당수익률: 2.3992379417231815%
+2025-02-10 01:26:09,562 - INFO - 보유 주식 수: 15
+2025-02-10 01:26:09,562 - INFO - 총 연간 배당금: $60.45
+2025-02-10 01:26:10,081 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:26:12,974 - INFO - UPS 분석:
+2025-02-10 01:26:12,974 - INFO - 현재가: $113.11000061035156
+2025-02-10 01:26:12,974 - INFO - 연간 배당률: $6.52
+2025-02-10 01:26:12,974 - INFO - 배당수익률: 5.764300207601011%
+2025-02-10 01:26:12,974 - INFO - 보유 주식 수: 7
+2025-02-10 01:26:12,974 - INFO - 총 연간 배당금: $45.64
+2025-02-10 01:26:13,515 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:26:16,628 - INFO - VZ 분석:
+2025-02-10 01:26:16,628 - INFO - 현재가: $39.880001068115234
+2025-02-10 01:26:16,628 - INFO - 연간 배당률: $2.71
+2025-02-10 01:26:16,628 - INFO - 배당수익률: 6.795385976473037%
+2025-02-10 01:26:16,628 - INFO - 보유 주식 수: 65
+2025-02-10 01:26:16,628 - INFO - 총 연간 배당금: $176.15
+2025-02-10 01:26:17,180 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:26:20,151 - INFO - CSCO 분석:
+2025-02-10 01:26:20,151 - INFO - 현재가: $62.27000045776367
+2025-02-10 01:26:20,151 - INFO - 연간 배당률: $1.6
+2025-02-10 01:26:20,151 - INFO - 배당수익률: 2.569455577706706%
+2025-02-10 01:26:20,151 - INFO - 보유 주식 수: 23
+2025-02-10 01:26:20,151 - INFO - 총 연간 배당금: $36.800000000000004
+2025-02-10 01:26:20,676 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:26:23,695 - INFO - MSFT 분석:
+2025-02-10 01:26:23,695 - INFO - 현재가: $409.75
+2025-02-10 01:26:23,697 - INFO - 연간 배당률: $3.32
+2025-02-10 01:26:23,697 - INFO - 배당수익률: 0.8102501525320317%
+2025-02-10 01:26:23,697 - INFO - 보유 주식 수: 10
+2025-02-10 01:26:23,697 - INFO - 총 연간 배당금: $33.199999999999996
+2025-02-10 01:26:24,294 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:26:27,108 - INFO - DGRO 분석:
+2025-02-10 01:26:27,108 - INFO - 현재가: $63.279998779296875
+2025-02-10 01:26:27,108 - INFO - 연간 배당률: $0
+2025-02-10 01:26:27,109 - INFO - 배당수익률: 0.0%
+2025-02-10 01:26:27,109 - INFO - 보유 주식 수: 261
+2025-02-10 01:26:27,109 - INFO - 총 연간 배당금: $0
+2025-02-10 01:26:27,702 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:26:30,620 - INFO - IVV 분석:
+2025-02-10 01:26:30,621 - INFO - 현재가: $603.7999877929688
+2025-02-10 01:26:30,621 - INFO - 연간 배당률: $0
+2025-02-10 01:26:30,621 - INFO - 배당수익률: 0.0%
+2025-02-10 01:26:30,622 - INFO - 보유 주식 수: 161
+2025-02-10 01:26:30,622 - INFO - 총 연간 배당금: $0
+2025-02-10 01:26:31,148 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:26:33,953 - INFO - SCHD 분석:
+2025-02-10 01:26:33,953 - INFO - 현재가: $27.559999465942383
+2025-02-10 01:26:33,953 - INFO - 연간 배당률: $0
+2025-02-10 01:26:33,953 - INFO - 배당수익률: 0.0%
+2025-02-10 01:26:33,953 - INFO - 보유 주식 수: 617
+2025-02-10 01:26:33,953 - INFO - 총 연간 배당금: $0
+2025-02-10 01:26:34,497 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:26:37,315 - INFO - SPYD 분석:
+2025-02-10 01:26:37,316 - INFO - 현재가: $43.709999084472656
+2025-02-10 01:26:37,316 - INFO - 연간 배당률: $0
+2025-02-10 01:26:37,316 - INFO - 배당수익률: 0.0%
+2025-02-10 01:26:37,316 - INFO - 보유 주식 수: 279
+2025-02-10 01:26:37,317 - INFO - 총 연간 배당금: $0
+2025-02-10 01:26:37,895 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:26:40,892 - INFO - VYM 분석:
+2025-02-10 01:26:40,892 - INFO - 현재가: $132.32000732421875
+2025-02-10 01:26:40,892 - INFO - 연간 배당률: $0
+2025-02-10 01:26:40,892 - INFO - 배당수익률: 0.0%
+2025-02-10 01:26:40,892 - INFO - 보유 주식 수: 98
+2025-02-10 01:26:40,892 - INFO - 총 연간 배당금: $0
+2025-02-10 01:26:41,526 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:26:44,097 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:38:11,475 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/getMe "HTTP/1.1 200 OK"
+2025-02-10 01:38:12,792 - INFO - NOBL 분석:
+2025-02-10 01:38:12,792 - INFO - 종목 유형: Unknown
+2025-02-10 01:38:12,792 - INFO - 현재가: $101.03
+2025-02-10 01:38:12,792 - INFO - 연간 배당률: $0.00
+2025-02-10 01:38:12,792 - INFO - 배당수익률: 0.00%
+2025-02-10 01:38:12,794 - INFO - 보유 주식 수: 14
+2025-02-10 01:38:12,794 - INFO - 총 연간 배당금: $0.00
+2025-02-10 01:38:13,303 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:38:16,475 - INFO - BMY 분석:
+2025-02-10 01:38:16,475 - INFO - 종목 유형: Unknown
+2025-02-10 01:38:16,475 - INFO - 현재가: $56.85
+2025-02-10 01:38:16,475 - INFO - 연간 배당률: $2.48
+2025-02-10 01:38:16,476 - INFO - 배당수익률: 4.36%
+2025-02-10 01:38:16,476 - INFO - 보유 주식 수: 60
+2025-02-10 01:38:16,476 - INFO - 총 연간 배당금: $148.80
+2025-02-10 01:38:17,094 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:38:20,214 - INFO - C 분석:
+2025-02-10 01:38:20,214 - INFO - 종목 유형: Unknown
+2025-02-10 01:38:20,214 - INFO - 현재가: $81.72
+2025-02-10 01:38:20,214 - INFO - 연간 배당률: $2.24
+2025-02-10 01:38:20,214 - INFO - 배당수익률: 2.74%
+2025-02-10 01:38:20,214 - INFO - 보유 주식 수: 10
+2025-02-10 01:38:20,214 - INFO - 총 연간 배당금: $22.40
+2025-02-10 01:38:20,736 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:38:23,959 - INFO - CL 분석:
+2025-02-10 01:38:23,959 - INFO - 종목 유형: Unknown
+2025-02-10 01:38:23,959 - INFO - 현재가: $86.76
+2025-02-10 01:38:23,959 - INFO - 연간 배당률: $2.00
+2025-02-10 01:38:23,959 - INFO - 배당수익률: 2.31%
+2025-02-10 01:38:23,959 - INFO - 보유 주식 수: 11
+2025-02-10 01:38:23,959 - INFO - 총 연간 배당금: $22.00
+2025-02-10 01:38:24,547 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:38:27,852 - INFO - CVX 분석:
+2025-02-10 01:38:27,852 - INFO - 종목 유형: Unknown
+2025-02-10 01:38:27,852 - INFO - 현재가: $152.62
+2025-02-10 01:38:27,852 - INFO - 연간 배당률: $6.52
+2025-02-10 01:38:27,852 - INFO - 배당수익률: 4.27%
+2025-02-10 01:38:27,853 - INFO - 보유 주식 수: 18
+2025-02-10 01:38:27,853 - INFO - 총 연간 배당금: $117.36
+2025-02-10 01:38:28,360 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:38:31,673 - INFO - JNJ 분석:
+2025-02-10 01:38:31,673 - INFO - 종목 유형: Unknown
+2025-02-10 01:38:31,673 - INFO - 현재가: $153.12
+2025-02-10 01:38:31,673 - INFO - 연간 배당률: $4.96
+2025-02-10 01:38:31,673 - INFO - 배당수익률: 3.24%
+2025-02-10 01:38:31,673 - INFO - 보유 주식 수: 13
+2025-02-10 01:38:31,673 - INFO - 총 연간 배당금: $64.48
+2025-02-10 01:38:32,182 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:38:35,279 - INFO - JPM 분석:
+2025-02-10 01:38:35,279 - INFO - 종목 유형: Unknown
+2025-02-10 01:38:35,279 - INFO - 현재가: $275.80
+2025-02-10 01:38:35,279 - INFO - 연간 배당률: $5.00
+2025-02-10 01:38:35,279 - INFO - 배당수익률: 1.81%
+2025-02-10 01:38:35,279 - INFO - 보유 주식 수: 1
+2025-02-10 01:38:35,282 - INFO - 총 연간 배당금: $5.00
+2025-02-10 01:38:35,834 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:38:39,117 - INFO - KO 분석:
+2025-02-10 01:38:39,117 - INFO - 종목 유형: Unknown
+2025-02-10 01:38:39,118 - INFO - 현재가: $63.84
+2025-02-10 01:38:39,118 - INFO - 연간 배당률: $1.94
+2025-02-10 01:38:39,118 - INFO - 배당수익률: 3.04%
+2025-02-10 01:38:39,118 - INFO - 보유 주식 수: 18
+2025-02-10 01:38:39,118 - INFO - 총 연간 배당금: $34.92
+2025-02-10 01:38:39,640 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:38:42,324 - INFO - KVUE 분석:
+2025-02-10 01:38:42,324 - INFO - 종목 유형: Unknown
+2025-02-10 01:38:42,324 - INFO - 현재가: $20.18
+2025-02-10 01:38:42,324 - INFO - 연간 배당률: $0.82
+2025-02-10 01:38:42,324 - INFO - 배당수익률: 4.06%
+2025-02-10 01:38:42,324 - INFO - 보유 주식 수: 10
+2025-02-10 01:38:42,324 - INFO - 총 연간 배당금: $8.20
+2025-02-10 01:38:42,866 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:38:45,770 - INFO - MET 분석:
+2025-02-10 01:38:45,770 - INFO - 종목 유형: Unknown
+2025-02-10 01:38:45,770 - INFO - 현재가: $83.92
+2025-02-10 01:38:45,770 - INFO - 연간 배당률: $2.18
+2025-02-10 01:38:45,770 - INFO - 배당수익률: 2.60%
+2025-02-10 01:38:45,770 - INFO - 보유 주식 수: 6
+2025-02-10 01:38:45,770 - INFO - 총 연간 배당금: $13.08
+2025-02-10 01:38:46,279 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:38:49,350 - INFO - O 분석:
+2025-02-10 01:38:49,350 - INFO - 종목 유형: Unknown
+2025-02-10 01:38:49,350 - INFO - 현재가: $54.12
+2025-02-10 01:38:49,350 - INFO - 연간 배당률: $3.17
+2025-02-10 01:38:49,350 - INFO - 배당수익률: 5.86%
+2025-02-10 01:38:49,350 - INFO - 보유 주식 수: 70
+2025-02-10 01:38:49,350 - INFO - 총 연간 배당금: $221.90
+2025-02-10 01:38:49,944 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:38:53,313 - INFO - PG 분석:
+2025-02-10 01:38:53,313 - INFO - 종목 유형: Unknown
+2025-02-10 01:38:53,314 - INFO - 현재가: $167.97
+2025-02-10 01:38:53,314 - INFO - 연간 배당률: $4.03
+2025-02-10 01:38:53,314 - INFO - 배당수익률: 2.40%
+2025-02-10 01:38:53,314 - INFO - 보유 주식 수: 15
+2025-02-10 01:38:53,314 - INFO - 총 연간 배당금: $60.45
+2025-02-10 01:38:53,836 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:38:56,766 - INFO - UPS 분석:
+2025-02-10 01:38:56,766 - INFO - 종목 유형: Unknown
+2025-02-10 01:38:56,766 - INFO - 현재가: $113.11
+2025-02-10 01:38:56,766 - INFO - 연간 배당률: $6.52
+2025-02-10 01:38:56,767 - INFO - 배당수익률: 5.76%
+2025-02-10 01:38:56,767 - INFO - 보유 주식 수: 7
+2025-02-10 01:38:56,767 - INFO - 총 연간 배당금: $45.64
+2025-02-10 01:38:57,287 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:39:00,521 - INFO - VZ 분석:
+2025-02-10 01:39:00,522 - INFO - 종목 유형: Unknown
+2025-02-10 01:39:00,522 - INFO - 현재가: $39.88
+2025-02-10 01:39:00,522 - INFO - 연간 배당률: $2.71
+2025-02-10 01:39:00,522 - INFO - 배당수익률: 6.80%
+2025-02-10 01:39:00,522 - INFO - 보유 주식 수: 65
+2025-02-10 01:39:00,522 - INFO - 총 연간 배당금: $176.15
+2025-02-10 01:39:01,128 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:39:04,139 - INFO - CSCO 분석:
+2025-02-10 01:39:04,139 - INFO - 종목 유형: Unknown
+2025-02-10 01:39:04,140 - INFO - 현재가: $62.27
+2025-02-10 01:39:04,140 - INFO - 연간 배당률: $1.60
+2025-02-10 01:39:04,140 - INFO - 배당수익률: 2.57%
+2025-02-10 01:39:04,140 - INFO - 보유 주식 수: 23
+2025-02-10 01:39:04,140 - INFO - 총 연간 배당금: $36.80
+2025-02-10 01:39:04,649 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:39:07,687 - INFO - MSFT 분석:
+2025-02-10 01:39:07,687 - INFO - 종목 유형: Unknown
+2025-02-10 01:39:07,688 - INFO - 현재가: $409.75
+2025-02-10 01:39:07,688 - INFO - 연간 배당률: $3.32
+2025-02-10 01:39:07,688 - INFO - 배당수익률: 0.81%
+2025-02-10 01:39:07,688 - INFO - 보유 주식 수: 10
+2025-02-10 01:39:07,688 - INFO - 총 연간 배당금: $33.20
+2025-02-10 01:39:08,203 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:39:11,042 - INFO - DGRO 분석:
+2025-02-10 01:39:11,042 - INFO - 종목 유형: Unknown
+2025-02-10 01:39:11,042 - INFO - 현재가: $63.28
+2025-02-10 01:39:11,043 - INFO - 연간 배당률: $0.00
+2025-02-10 01:39:11,043 - INFO - 배당수익률: 0.00%
+2025-02-10 01:39:11,043 - INFO - 보유 주식 수: 261
+2025-02-10 01:39:11,043 - INFO - 총 연간 배당금: $0.00
+2025-02-10 01:39:11,555 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:39:14,516 - INFO - IVV 분석:
+2025-02-10 01:39:14,516 - INFO - 종목 유형: Unknown
+2025-02-10 01:39:14,516 - INFO - 현재가: $603.80
+2025-02-10 01:39:14,516 - INFO - 연간 배당률: $5.69
+2025-02-10 01:39:14,517 - INFO - 배당수익률: 0.94%
+2025-02-10 01:39:14,517 - INFO - 보유 주식 수: 161
+2025-02-10 01:39:14,517 - INFO - 총 연간 배당금: $915.77
+2025-02-10 01:39:15,055 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:39:17,930 - INFO - SCHD 분석:
+2025-02-10 01:39:17,930 - INFO - 종목 유형: Unknown
+2025-02-10 01:39:17,930 - INFO - 현재가: $27.56
+2025-02-10 01:39:17,931 - INFO - 연간 배당률: $0.00
+2025-02-10 01:39:17,931 - INFO - 배당수익률: 0.00%
+2025-02-10 01:39:17,931 - INFO - 보유 주식 수: 617
+2025-02-10 01:39:17,931 - INFO - 총 연간 배당금: $0.00
+2025-02-10 01:39:18,469 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:39:21,311 - INFO - SPYD 분석:
+2025-02-10 01:39:21,311 - INFO - 종목 유형: Unknown
+2025-02-10 01:39:21,311 - INFO - 현재가: $43.71
+2025-02-10 01:39:21,311 - INFO - 연간 배당률: $0.00
+2025-02-10 01:39:21,311 - INFO - 배당수익률: 0.00%
+2025-02-10 01:39:21,311 - INFO - 보유 주식 수: 279
+2025-02-10 01:39:21,311 - INFO - 총 연간 배당금: $0.00
+2025-02-10 01:39:21,823 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:39:24,787 - INFO - VYM 분석:
+2025-02-10 01:39:24,787 - INFO - 종목 유형: Unknown
+2025-02-10 01:39:24,788 - INFO - 현재가: $132.32
+2025-02-10 01:39:24,788 - INFO - 연간 배당률: $0.00
+2025-02-10 01:39:24,788 - INFO - 배당수익률: 0.00%
+2025-02-10 01:39:24,788 - INFO - 보유 주식 수: 98
+2025-02-10 01:39:24,788 - INFO - 총 연간 배당금: $0.00
+2025-02-10 01:39:25,297 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 01:39:27,823 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:24:36,273 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/getMe "HTTP/1.1 200 OK"
+2025-02-10 22:24:37,968 - INFO - NOBL 분석:
+2025-02-10 22:24:37,990 - INFO - 종목 유형: Unknown
+2025-02-10 22:24:37,991 - INFO - 현재가: $101.03
+2025-02-10 22:24:37,991 - INFO - 연간 배당률: $0.00
+2025-02-10 22:24:37,992 - INFO - 배당수익률: 0.00%
+2025-02-10 22:24:37,992 - INFO - 보유 주식 수: 14
+2025-02-10 22:24:37,992 - INFO - 총 연간 배당금: $0.00
+2025-02-10 22:24:38,486 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:24:41,840 - INFO - BMY 분석:
+2025-02-10 22:24:41,841 - INFO - 종목 유형: Unknown
+2025-02-10 22:24:41,841 - INFO - 현재가: $56.85
+2025-02-10 22:24:41,842 - INFO - 연간 배당률: $2.48
+2025-02-10 22:24:41,842 - INFO - 배당수익률: 4.36%
+2025-02-10 22:24:41,842 - INFO - 보유 주식 수: 60
+2025-02-10 22:24:41,843 - INFO - 총 연간 배당금: $148.80
+2025-02-10 22:24:42,312 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:24:45,531 - INFO - C 분석:
+2025-02-10 22:24:45,531 - INFO - 종목 유형: Unknown
+2025-02-10 22:24:45,532 - INFO - 현재가: $81.72
+2025-02-10 22:24:45,532 - INFO - 연간 배당률: $2.24
+2025-02-10 22:24:45,532 - INFO - 배당수익률: 2.74%
+2025-02-10 22:24:45,533 - INFO - 보유 주식 수: 10
+2025-02-10 22:24:45,533 - INFO - 총 연간 배당금: $22.40
+2025-02-10 22:24:45,996 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:24:49,348 - INFO - CL 분석:
+2025-02-10 22:24:49,349 - INFO - 종목 유형: Unknown
+2025-02-10 22:24:49,349 - INFO - 현재가: $86.76
+2025-02-10 22:24:49,350 - INFO - 연간 배당률: $2.00
+2025-02-10 22:24:49,350 - INFO - 배당수익률: 2.31%
+2025-02-10 22:24:49,350 - INFO - 보유 주식 수: 11
+2025-02-10 22:24:49,350 - INFO - 총 연간 배당금: $22.00
+2025-02-10 22:24:49,792 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:24:53,079 - INFO - CVX 분석:
+2025-02-10 22:24:53,080 - INFO - 종목 유형: Unknown
+2025-02-10 22:24:53,080 - INFO - 현재가: $152.62
+2025-02-10 22:24:53,081 - INFO - 연간 배당률: $6.52
+2025-02-10 22:24:53,081 - INFO - 배당수익률: 4.27%
+2025-02-10 22:24:53,081 - INFO - 보유 주식 수: 18
+2025-02-10 22:24:53,081 - INFO - 총 연간 배당금: $117.36
+2025-02-10 22:24:53,536 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:24:57,154 - INFO - JNJ 분석:
+2025-02-10 22:24:57,154 - INFO - 종목 유형: Unknown
+2025-02-10 22:24:57,154 - INFO - 현재가: $153.12
+2025-02-10 22:24:57,154 - INFO - 연간 배당률: $4.96
+2025-02-10 22:24:57,155 - INFO - 배당수익률: 3.24%
+2025-02-10 22:24:57,155 - INFO - 보유 주식 수: 13
+2025-02-10 22:24:57,155 - INFO - 총 연간 배당금: $64.48
+2025-02-10 22:24:57,603 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:00,855 - INFO - JPM 분석:
+2025-02-10 22:25:00,857 - INFO - 종목 유형: Unknown
+2025-02-10 22:25:00,857 - INFO - 현재가: $275.80
+2025-02-10 22:25:00,857 - INFO - 연간 배당률: $5.00
+2025-02-10 22:25:00,858 - INFO - 배당수익률: 1.81%
+2025-02-10 22:25:00,858 - INFO - 보유 주식 수: 1
+2025-02-10 22:25:00,858 - INFO - 총 연간 배당금: $5.00
+2025-02-10 22:25:01,342 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:04,747 - INFO - KO 분석:
+2025-02-10 22:25:04,748 - INFO - 종목 유형: Unknown
+2025-02-10 22:25:04,748 - INFO - 현재가: $63.84
+2025-02-10 22:25:04,748 - INFO - 연간 배당률: $1.94
+2025-02-10 22:25:04,748 - INFO - 배당수익률: 3.04%
+2025-02-10 22:25:04,749 - INFO - 보유 주식 수: 18
+2025-02-10 22:25:04,749 - INFO - 총 연간 배당금: $34.92
+2025-02-10 22:25:05,283 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:07,957 - INFO - KVUE 분석:
+2025-02-10 22:25:07,958 - INFO - 종목 유형: Unknown
+2025-02-10 22:25:07,958 - INFO - 현재가: $20.18
+2025-02-10 22:25:07,958 - INFO - 연간 배당률: $0.82
+2025-02-10 22:25:07,958 - INFO - 배당수익률: 4.06%
+2025-02-10 22:25:07,959 - INFO - 보유 주식 수: 10
+2025-02-10 22:25:07,959 - INFO - 총 연간 배당금: $8.20
+2025-02-10 22:25:08,429 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:11,364 - INFO - MET 분석:
+2025-02-10 22:25:11,364 - INFO - 종목 유형: Unknown
+2025-02-10 22:25:11,365 - INFO - 현재가: $83.92
+2025-02-10 22:25:11,365 - INFO - 연간 배당률: $2.18
+2025-02-10 22:25:11,365 - INFO - 배당수익률: 2.60%
+2025-02-10 22:25:11,365 - INFO - 보유 주식 수: 6
+2025-02-10 22:25:11,365 - INFO - 총 연간 배당금: $13.08
+2025-02-10 22:25:11,815 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:14,997 - INFO - O 분석:
+2025-02-10 22:25:14,997 - INFO - 종목 유형: Unknown
+2025-02-10 22:25:14,998 - INFO - 현재가: $54.12
+2025-02-10 22:25:14,998 - INFO - 연간 배당률: $3.17
+2025-02-10 22:25:14,998 - INFO - 배당수익률: 5.86%
+2025-02-10 22:25:14,998 - INFO - 보유 주식 수: 70
+2025-02-10 22:25:14,999 - INFO - 총 연간 배당금: $221.90
+2025-02-10 22:25:15,749 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:19,055 - INFO - PG 분석:
+2025-02-10 22:25:19,056 - INFO - 종목 유형: Unknown
+2025-02-10 22:25:19,056 - INFO - 현재가: $167.97
+2025-02-10 22:25:19,057 - INFO - 연간 배당률: $4.03
+2025-02-10 22:25:19,057 - INFO - 배당수익률: 2.40%
+2025-02-10 22:25:19,057 - INFO - 보유 주식 수: 15
+2025-02-10 22:25:19,057 - INFO - 총 연간 배당금: $60.45
+2025-02-10 22:25:19,535 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:22,666 - INFO - UPS 분석:
+2025-02-10 22:25:22,667 - INFO - 종목 유형: Unknown
+2025-02-10 22:25:22,667 - INFO - 현재가: $113.11
+2025-02-10 22:25:22,667 - INFO - 연간 배당률: $6.52
+2025-02-10 22:25:22,667 - INFO - 배당수익률: 5.76%
+2025-02-10 22:25:22,667 - INFO - 보유 주식 수: 7
+2025-02-10 22:25:22,668 - INFO - 총 연간 배당금: $45.64
+2025-02-10 22:25:23,211 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:26,346 - INFO - VZ 분석:
+2025-02-10 22:25:26,347 - INFO - 종목 유형: Unknown
+2025-02-10 22:25:26,347 - INFO - 현재가: $39.88
+2025-02-10 22:25:26,347 - INFO - 연간 배당률: $2.71
+2025-02-10 22:25:26,347 - INFO - 배당수익률: 6.80%
+2025-02-10 22:25:26,347 - INFO - 보유 주식 수: 65
+2025-02-10 22:25:26,347 - INFO - 총 연간 배당금: $176.15
+2025-02-10 22:25:26,789 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:29,872 - INFO - CSCO 분석:
+2025-02-10 22:25:29,872 - INFO - 종목 유형: Unknown
+2025-02-10 22:25:29,872 - INFO - 현재가: $62.27
+2025-02-10 22:25:29,872 - INFO - 연간 배당률: $1.60
+2025-02-10 22:25:29,872 - INFO - 배당수익률: 2.57%
+2025-02-10 22:25:29,872 - INFO - 보유 주식 수: 23
+2025-02-10 22:25:29,872 - INFO - 총 연간 배당금: $36.80
+2025-02-10 22:25:30,324 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:33,489 - INFO - MSFT 분석:
+2025-02-10 22:25:33,489 - INFO - 종목 유형: Unknown
+2025-02-10 22:25:33,489 - INFO - 현재가: $409.75
+2025-02-10 22:25:33,489 - INFO - 연간 배당률: $3.32
+2025-02-10 22:25:33,489 - INFO - 배당수익률: 0.81%
+2025-02-10 22:25:33,489 - INFO - 보유 주식 수: 10
+2025-02-10 22:25:33,489 - INFO - 총 연간 배당금: $33.20
+2025-02-10 22:25:33,930 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:36,732 - INFO - DGRO 분석:
+2025-02-10 22:25:36,732 - INFO - 종목 유형: Unknown
+2025-02-10 22:25:36,733 - INFO - 현재가: $63.28
+2025-02-10 22:25:36,733 - INFO - 연간 배당률: $0.00
+2025-02-10 22:25:36,733 - INFO - 배당수익률: 0.00%
+2025-02-10 22:25:36,733 - INFO - 보유 주식 수: 261
+2025-02-10 22:25:36,733 - INFO - 총 연간 배당금: $0.00
+2025-02-10 22:25:37,196 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:40,122 - INFO - IVV 분석:
+2025-02-10 22:25:40,122 - INFO - 종목 유형: Unknown
+2025-02-10 22:25:40,122 - INFO - 현재가: $603.80
+2025-02-10 22:25:40,122 - INFO - 연간 배당률: $5.69
+2025-02-10 22:25:40,122 - INFO - 배당수익률: 0.94%
+2025-02-10 22:25:40,122 - INFO - 보유 주식 수: 161
+2025-02-10 22:25:40,122 - INFO - 총 연간 배당금: $915.77
+2025-02-10 22:25:40,580 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:43,449 - INFO - SCHD 분석:
+2025-02-10 22:25:43,450 - INFO - 종목 유형: Unknown
+2025-02-10 22:25:43,450 - INFO - 현재가: $27.56
+2025-02-10 22:25:43,450 - INFO - 연간 배당률: $0.00
+2025-02-10 22:25:43,450 - INFO - 배당수익률: 0.00%
+2025-02-10 22:25:43,450 - INFO - 보유 주식 수: 617
+2025-02-10 22:25:43,450 - INFO - 총 연간 배당금: $0.00
+2025-02-10 22:25:43,943 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:46,834 - INFO - SPYD 분석:
+2025-02-10 22:25:46,834 - INFO - 종목 유형: Unknown
+2025-02-10 22:25:46,835 - INFO - 현재가: $43.71
+2025-02-10 22:25:46,835 - INFO - 연간 배당률: $0.00
+2025-02-10 22:25:46,835 - INFO - 배당수익률: 0.00%
+2025-02-10 22:25:46,835 - INFO - 보유 주식 수: 279
+2025-02-10 22:25:46,835 - INFO - 총 연간 배당금: $0.00
+2025-02-10 22:25:47,392 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:50,418 - INFO - VYM 분석:
+2025-02-10 22:25:50,418 - INFO - 종목 유형: Unknown
+2025-02-10 22:25:50,418 - INFO - 현재가: $132.32
+2025-02-10 22:25:50,418 - INFO - 연간 배당률: $0.00
+2025-02-10 22:25:50,418 - INFO - 배당수익률: 0.00%
+2025-02-10 22:25:50,419 - INFO - 보유 주식 수: 98
+2025-02-10 22:25:50,419 - INFO - 총 연간 배당금: $0.00
+2025-02-10 22:25:50,870 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
+2025-02-10 22:25:53,438 - INFO - HTTP Request: POST https://api.telegram.org/bot7443115769:AAFUeChHAz5EEmnByu1HXUqD5h-NYcsB6-4/sendMessage "HTTP/1.1 200 OK"
