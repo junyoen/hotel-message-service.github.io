@@ -1,9 +1,14 @@
+// Azure Translator API 설정
+const TRANSLATOR_KEY = '9QIOsH4sQRqW8crgBjJE4X7BKMSMsRbDnXy7OwS61QV2yN4GLNBsJQQJ99BBAC3pKaRXJ3w3AAAbACOGDxZf';
+const TRANSLATOR_REGION = 'eastasia';
+const TRANSLATOR_ENDPOINT = 'https://api.cognitive.microsofttranslator.com';
+
 // URL 파라미터에서 값 가져오기
 const urlParams = new URLSearchParams(window.location.search);
 const roomNumber = urlParams.get('room');
 const selectedLanguage = urlParams.get('lang');
 
-// DOM 요소 선택
+// DOM 요소
 const roomInfo = document.getElementById('roomInfo');
 const languageInfo = document.getElementById('languageInfo');
 const messageInput = document.getElementById('messageInput');
@@ -17,6 +22,14 @@ const languageNames = {
     'en': 'English',
     'ja': '日本語',
     'zh': '中文'
+};
+
+// 번역을 위한 언어 코드 매핑
+const translateLanguageCodes = {
+    'ko': 'ko',
+    'en': 'en',
+    'ja': 'ja',
+    'zh': 'zh-Hans'
 };
 
 // 다국어 텍스트 정의
@@ -90,9 +103,51 @@ const translations = {
 // 선택된 카테고리
 let selectedCategory = '';
 
+// 디바운스 타이머
+let translationTimeout;
+
+// 번역 함수
+async function translateText(text) {
+    if (!text.trim()) {
+        translatedMessage.style.display = 'none';
+        return;
+    }
+
+    try {
+        // 언어 감지는 자동으로 하고, 무조건 한국어로 번역
+        const response = await fetch('https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=ko', {
+            method: 'POST',
+            headers: {
+                'Ocp-Apim-Subscription-Key': TRANSLATOR_KEY,
+                'Ocp-Apim-Subscription-Region': TRANSLATOR_REGION,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify([{
+                text: text
+            }])
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (data && data[0] && data[0].translations && data[0].translations[0]) {
+            const translatedText = data[0].translations[0].text;
+            translatedMessage.textContent = translatedText;
+            translatedMessage.style.display = 'block';
+            return translatedText;
+        }
+    } catch (error) {
+        console.error('Translation error:', error);
+        translatedMessage.textContent = '번역 중 오류가 발생했습니다.';
+        translatedMessage.style.display = 'block';
+    }
+}
+
 // 페이지 텍스트 업데이트 함수
 function updatePageLanguage(language) {
-    const texts = translations[language] || translations['en']; // 기본값은 영어
+    const texts = translations[language] || translations['en'];
     
     // 페이지 제목 업데이트
     document.querySelector('.hotel-logo h1').textContent = texts.pageTitle;
@@ -137,15 +192,26 @@ categoryButtons.forEach(btn => {
 });
 
 // 메시지 입력 이벤트
-messageInput.addEventListener('input', validateForm);
+messageInput.addEventListener('input', () => {
+    clearTimeout(translationTimeout);
+    translationTimeout = setTimeout(() => {
+        validateForm();
+        translateText(messageInput.value);
+    }, 500); // 500ms 디바운스
+});
 
 // 메시지 전송 버튼 이벤트
 sendButton.addEventListener('click', async () => {
+    const originalMessage = messageInput.value.trim();
+    const translatedText = await translateText(originalMessage);
+    
     const messageData = {
         roomNumber,
         language: selectedLanguage,
         category: selectedCategory,
-        message: messageInput.value.trim()
+        originalMessage,
+        translatedMessage: translatedText,
+        timestamp: new Date().toISOString()
     };
 
     try {
@@ -157,6 +223,7 @@ sendButton.addEventListener('click', async () => {
         messageInput.value = '';
         categoryButtons.forEach(btn => btn.classList.remove('active'));
         selectedCategory = '';
+        translatedMessage.style.display = 'none';
         validateForm();
     } catch (error) {
         console.error('메시지 전송 실패:', error);
