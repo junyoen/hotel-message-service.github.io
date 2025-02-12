@@ -7,14 +7,6 @@ const TRANSLATOR_ENDPOINT = 'https://api.cognitive.microsofttranslator.com';
 const TELEGRAM_BOT_TOKEN = '7641859647:AAF9SGLlCpkXAQNQFt9SBQJkJYDgGsdXSts';
 const TELEGRAM_CHAT_ID = '-471428962';
 
-// 카테고리 한글 매핑
-const categoryNames = {
-    'cleaning': '청소 요청',
-    'amenity': '어메니티 요청',
-    'maintenance': '수리 요청',
-    'other': '기타 문의'
-};
-
 // URL 파라미터에서 값 가져오기
 const urlParams = new URLSearchParams(window.location.search);
 const roomNumber = urlParams.get('room');
@@ -267,3 +259,6 @@ sendButton.addEventListener('click', async () => {
         alert('메시지 전송에 실패했습니다. 다시 시도해 주세요.');
     }
 });
+
+// 페이지 초기화
+updatePageLanguage(selectedLanguage);
