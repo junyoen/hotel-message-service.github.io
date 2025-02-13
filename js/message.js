@@ -221,6 +221,23 @@ sendButton.addEventListener('click', async () => {
 `;
 
     try {
+        // 텔레그램 API 요청 디버깅 로그 추가
+        console.log('Telegram request:', {
+            url: 'https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage',
+            body: {
+                chat_id: TELEGRAM_CHAT_ID,
+                text: telegramMessage,
+                reply_markup: {
+                    inline_keyboard: [[
+                        {
+                            text: '✅ 처리완료',
+                            callback_data" 'complete_${roomNumber}'
+                        }
+                    ]]
+                }
+            }
+        });
+        
         // 텔레그램으로 메시지 전송
         const telegramResponse = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
             method: 'POST',
@@ -241,8 +258,12 @@ sendButton.addEventListener('click', async () => {
             })
         });
 
+        // 응답 내용 확인
+        const responseData = await telegramResponse.json();
+        console.log('Telegram response:', responseData);
+
         if (!telegramResponse.ok) {
-            throw new Error('텔레그램 메시지 전송 실패');
+            throw new Error(`텔레그램 메시지 전송 실패 (${telegramResponse.status}): ${JSON.stringify(responseData)}`);
         }
 
         alert('메시지가 전송되었습니다.');
