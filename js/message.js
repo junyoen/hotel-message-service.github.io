@@ -231,7 +231,7 @@ sendButton.addEventListener('click', async () => {
                     inline_keyboard: [[
                         {
                             text: '✅ 처리완료',
-                            callback_data" 'complete_${roomNumber}'
+                            callback_data: 'complete_${roomNumber}'
                         }
                     ]]
                 }
