@@ -72,13 +72,30 @@ roomInput.addEventListener('input', validateForm);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    const roomNumber = parseInt(roomInput.value);
+    const roomNumber = roomInput.value
     
-    if (!validRooms.has(roomNumber)) {
+    // 디버깅을 위한 로그 추가
+    console.log('Form submitted with:', {
+        roomNumber: roomNumber,
+        selectedLang: selectedLang
+    });
+
+    // 객실 번호 유효성 검사
+    if (!isValidRoomNumber(roomNumber)) {
         roomError.style.display = 'block';
         return;
     }
 
+    // 언어 선택 확인
+    if (!selectedLang) {
+        alert('언어를 선택해주세요.');
+        return;
+    }
+
+    // 이동할 때 URL 로깅
+    const nextUrl = `message.html?room=${roomNumber}&lang=${selectedLang}`;
+    console.log('Moving to':, nextUrl);
+
     // 다음 페이지로 이동
-    window.location.href = `message.html?room=${roomNumber}&lang=${selectedLang}`;
+    window.location.href = nextUrl;
 });
