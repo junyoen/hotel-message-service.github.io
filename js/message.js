@@ -280,5 +280,12 @@ sendButton.addEventListener('click', async () => {
     }
 });
 
-// 페이지 초기화
-updatePageLanguage(selectedLanguage);
+// DOM이 완전히 로드된 후 실행되도록 수정
+document.addEventListener('DOMContentLoaded', () => {
+    // URL에서 언어 파라미터 가져오기
+    const selectedLanguage = urlParams.get('lang');
+    console.log('Selected Language:', selectedLanguage); // 디버깅용
+
+    // 페이지 언어 업데이트
+    updatePageLanguage(selectedLanguage);
+});
