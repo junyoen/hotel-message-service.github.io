@@ -5,7 +5,7 @@ const TRANSLATOR_ENDPOINT = 'https://api.cognitive.microsofttranslator.com';
 
 // Telegram 설정
 const TELEGRAM_BOT_TOKEN = '7641859647:AAF9SGLlCpkXAQNQFt9SBQJkJYDgGsdXSts';
-const TELEGRAM_CHAT_ID = '-471428962';
+const TELEGRAM_CHAT_ID = '7797882571';
 
 // URL 파라미터에서 값 가져오기
 const urlParams = new URLSearchParams(window.location.search);
