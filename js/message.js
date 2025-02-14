@@ -86,6 +86,7 @@ async function translateText(text) {
     }
 
     try {
+        // 언어 감지는 자동으로 하고, 무조건 한국어로 번역
         const response = await fetch('https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=ko', {
             method: 'POST',
             headers: {
@@ -114,6 +115,27 @@ async function translateText(text) {
         translatedMessage.textContent = '번역 중 오류가 발생했습니다.';
         translatedMessage.style.display = 'block';
     }
+}
+
+// 페이지 텍스트 업데이트 함수
+function updatePageLanguage(language) {
+    const texts = translations[language] || translations['en'];
+    
+    // 페이지 제목 업데이트
+    document.querySelector('.hotel-logo h1').textContent = texts.pageTitle;
+    document.title = texts.pageTitle;
+    
+    // 룸 정보 및 언어 정보 업데이트
+    roomInfo.textContent = texts.roomNumber + roomNumber;
+    languageInfo.textContent = texts.selectedLanguage + languageNames[language];
+    
+    // 메시지 입력 관련 텍스트 업데이트
+    document.getElementById('messageLabel').textContent = texts.messageContent;
+    messageInput.placeholder = texts.messagePlaceholder;
+    
+    // 버튼 텍스트 업데이트
+    document.querySelector('.back-btn').textContent = texts.backButton;
+    sendButton.textContent = texts.sendButton;
 }
 
 // 폼 유효성 검사
@@ -186,34 +208,11 @@ messageInput.addEventListener('input', () => {
     }, 500);
 });
 
-// 페이지 텍스트 업데이트 함수
-function updatePageLanguage(language) {
-    const texts = translations[language] || translations['en'];
-    
-    // 페이지 제목 업데이트
-    document.querySelector('.hotel-logo h1').textContent = texts.pageTitle;
-    document.title = texts.pageTitle;
-    
-    // 룸 정보 및 언어 정보 업데이트
-    roomInfo.textContent = texts.roomNumber + roomNumber;
-    languageInfo.textContent = texts.selectedLanguage + languageNames[language];
-    
-    // 메시지 입력 관련 텍스트 업데이트
-    document.getElementById('messageLabel').textContent = texts.messageContent;
-    messageInput.placeholder = texts.messagePlaceholder;
-    
-    // 버튼 텍스트 업데이트
-    document.querySelector('.back-btn').textContent = texts.backButton;
-    sendButton.textContent = texts.sendButton;
-}
-
 // 메시지 전송 버튼 이벤트
 sendButton.addEventListener('click', async () => {
-    try {
         const originalMessage = messageInput.value.trim();
         const translatedText = await translateText(originalMessage);
         const currentTime = new Date().toLocaleString();
-        const messageId = Date.now();
 
         // 텔레그램 메시지 형식
         const telegramMessage = `
@@ -224,6 +223,11 @@ sendButton.addEventListener('click', async () => {
 시간: ${currentTime}
 `;
 
+    try{
+        //현재 시간으로 고유 ID 생성
+        const messageId = Date.now()
+
+        // 텔레그램으로 메시지 전송
         const telegramResponse = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
             method: 'POST',
             headers: {
@@ -248,6 +252,8 @@ sendButton.addEventListener('click', async () => {
         }
 
         alert('메시지가 전송되었습니다.');
+
+        // 입력 필드 초기화
         messageInput.value = '';
         translatedMessage.style.display = 'none';
         validateForm();
@@ -258,8 +264,10 @@ sendButton.addEventListener('click', async () => {
     }
 });
 
-// 페이지 로드 시 초기화
+// DON 이 완전히 로드된 후 실행되도록 수정
 document.addEventListener('DOMContentLoaded', () => {
+    // URL 에서 언어 파라미터 가져오기
+    const selectedLanguage = urlParams.get('lang');
+    // 페이지 언어 업데이트
     updatePageLanguage(selectedLanguage);
-    validateForm();
 });
