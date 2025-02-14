@@ -203,38 +203,17 @@ async function updateMessageStatus(messageId, newStatus) {
                         }
                     ]]
                 }
-            })
+            }),
+            timeout: 10000  // 10초 타임아웃 설정
         });
 
         if (!response.ok) {
-            const errorData = await response.json();
-            console.error('상태 업데이트 실패:', error);
+            throw new Error('업데이트 실피');
         }
     } catch (error) {
         console.error('상태 업데이트 실패:', error);
     }
 }
-
-// 주기적으로 업데이트 확인하는 코드
-setInterval(async () => {
-    try {
-        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`);
-        const data = await response.json();
-        console.log('Received updates:', data);  // 디버깅용
-
-        if (data.ok) {
-            const updates = data.result;
-            updates.forEach(update => {
-                if (update.callback_query) {
-                    console.log('Callback query received:', update.callback_query);  // 디버깅용
-                    updateMessageStatus(update.callback_query.message.message_id);
-                }
-            });
-        }
-    } catch (error) {
-        console.error('업데이트 확인 실패:', error);
-    }
-}, 5000);
 
 // 카테고리 버튼 이벤트
 categoryButtons.forEach(btn => {
@@ -311,7 +290,8 @@ sendButton.addEventListener('click', async () => {
                         }
                     ]]
                 }
-            })
+            }),
+            timeout: 10000   // 10초 타임아웃 설정정
         });
 
         // 응답 내용 확인
