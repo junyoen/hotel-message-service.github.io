@@ -17,7 +17,6 @@ const roomInfo = document.getElementById('roomInfo');
 const languageInfo = document.getElementById('languageInfo');
 const messageInput = document.getElementById('messageInput');
 const sendButton = document.getElementById('sendButton');
-const categoryButtons = document.querySelectorAll('.category-btn');
 const translatedMessage = document.getElementById('translatedMessage');
 
 // 언어 표시 텍스트
@@ -42,13 +41,6 @@ const translations = {
         pageTitle: '메시지 작성',
         roomNumber: '객실 번호: ',
         selectedLanguage: '선택 언어: ',
-        categorySelect: '카테고리 선택',
-        categories: {
-            cleaning: '청소 요청',
-            amenity: '어메니티 요청',
-            maintenance: '수리 요청',
-            other: '기타 문의'
-        },
         messageContent: '메시지 내용',
         messagePlaceholder: '메시지를 입력하세요',
         backButton: '뒤로가기',
@@ -58,13 +50,6 @@ const translations = {
         pageTitle: 'Write Message',
         roomNumber: 'Room Number: ',
         selectedLanguage: 'Selected Language: ',
-        categorySelect: 'Select Category',
-        categories: {
-            cleaning: 'Cleaning Request',
-            amenity: 'Amenity Request',
-            maintenance: 'Maintenance Request',
-            other: 'Other Inquiry'
-        },
         messageContent: 'Message Content',
         messagePlaceholder: 'Enter your message',
         backButton: 'Back',
@@ -74,13 +59,6 @@ const translations = {
         pageTitle: 'メッセージ作成',
         roomNumber: '部屋番号: ',
         selectedLanguage: '選択言語: ',
-        categorySelect: 'カテゴリー選択',
-        categories: {
-            cleaning: '清掃リクエスト',
-            amenity: 'アメニティリクエスト',
-            maintenance: '修理リクエスト',
-            other: 'その他のお問い合わせ'
-        },
         messageContent: 'メッセージ内容',
         messagePlaceholder: 'メッセージを入力してください',
         backButton: '戻る',
@@ -90,22 +68,13 @@ const translations = {
         pageTitle: '写信息',
         roomNumber: '房间号: ',
         selectedLanguage: '所选语言: ',
-        categorySelect: '选择类别',
-        categories: {
-            cleaning: '清洁请求',
-            amenity: '客房用品请求',
-            maintenance: '维修请求',
-            other: '其他咨询'
-        },
         messageContent: '信息内容',
         messagePlaceholder: '请输入信息',
         backButton: '返回',
         sendButton: '发送信息'
     }
-};
-
-// 선택된 카테고리
-let selectedCategory = '';
+ };
+ 
 
 // 디바운스 타이머
 let translationTimeout;
@@ -161,13 +130,6 @@ function updatePageLanguage(language) {
     roomInfo.textContent = texts.roomNumber + roomNumber;
     languageInfo.textContent = texts.selectedLanguage + languageNames[language];
     
-    // 카테고리 관련 텍스트 업데이트
-    document.getElementById('categoryLabel').textContent = texts.categorySelect;
-    document.querySelector('[data-category="cleaning"]').textContent = texts.categories.cleaning;
-    document.querySelector('[data-category="amenity"]').textContent = texts.categories.amenity;
-    document.querySelector('[data-category="maintenance"]').textContent = texts.categories.maintenance;
-    document.querySelector('[data-category="other"]').textContent = texts.categories.other;
-    
     // 메시지 입력 관련 텍스트 업데이트
     document.getElementById('messageLabel').textContent = texts.messageContent;
     messageInput.placeholder = texts.messagePlaceholder;
@@ -179,7 +141,7 @@ function updatePageLanguage(language) {
 
 // 폼 유효성 검사
 function validateForm() {
-    const isValid = selectedCategory && messageInput.value.trim().length > 0;
+    const isValid = messageInput.value.trim().length > 0;
     sendButton.disabled = !isValid;
 }
 
@@ -238,18 +200,6 @@ async function checkForButtonClicks() {
 const checkInterval = 5000;
 setInterval(checkForButtonClicks, checkInterval);
 
-// 카테고리 버튼 이벤트
-categoryButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // 기존 선택 해제
-        categoryButtons.forEach(b => b.classList.remove('active'));
-        // 새로운 선택
-        btn.classList.add('active');
-        selectedCategory = btn.dataset.category;
-        validateForm();
-    });
-});
-
 // 메시지 입력 이벤트
 messageInput.addEventListener('input', () => {
     clearTimeout(translationTimeout);
@@ -269,7 +219,6 @@ sendButton.addEventListener('click', async () => {
     const telegramMessage = `
 📢 새로운 요청
 방번호: ${roomNumber}
-구분: ${translations['ko'].categories[selectedCategory]}
 메시지: ${originalMessage}
 번역: ${translatedText}
 시간: ${currentTime}
