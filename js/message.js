@@ -183,14 +183,13 @@ function validateForm() {
     sendButton.disabled = !isValid;
 }
 
-// 메시지 상태 업데이트 함수 추가
-async function updateMessageStatus(messageId, newStatus) {
+// 버튼 클릭 이벤트 처리 함수
+async function handleButtonClick(messageId) {
     try {
-        console.log('Updating message status:', messageId);  // 디버깅용용
-        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/editMessageText`, {
+        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/editMessageReplyMarkup`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify({
                 chat_id: TELEGRAM_CHAT_ID,
@@ -199,21 +198,45 @@ async function updateMessageStatus(messageId, newStatus) {
                     inline_keyboard: [[
                         {
                             text: '✅ 확인 완료',
-                            callback_data: `completed`  // 이미 처리됨을 나타내는 상태
+                            callback_data: 'completed'
                         }
                     ]]
                 }
-            }),
-            timeout: 10000  // 10초 타임아웃 설정
+            })
         });
 
         if (!response.ok) {
-            throw new Error('업데이트 실피');
+            console.error('Button update failed:', await response.text());
+            return false;
         }
+        return true;
     } catch (error) {
-        console.error('상태 업데이트 실패:', error);
+        console.error('Button click handler error:', error);
+        return false;
     }
 }
+
+// 클릭 이벤트 수신 함수
+async function checkForButtonClicks() {
+    try {
+        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates?offset=-1`);
+        const data = await response.json();
+        
+        if (data.ok && data.result.length > 0) {
+            const update = data.result[0];
+            if (update.callback_query) {
+                const messageId = update.callback_query.message.message_id;
+                await handleButtonClick(messageId);
+            }
+        }
+    } catch (error) {
+        console.error('Check updates error:', error);
+    }
+}
+
+// 주기적으로 버튼 클릭 체크 (5초마다)
+const checkInterval = 5000;
+setInterval(checkForButtonClicks, checkInterval);
 
 // 카테고리 버튼 이벤트
 categoryButtons.forEach(btn => {
