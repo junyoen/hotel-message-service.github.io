@@ -186,7 +186,7 @@ function validateForm() {
 // 메시지 상태 업데이트 함수 추가
 async function updateMessageStatus(messageId, newStatus) {
     try {
-        const response = await fetch('https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/editMessageText', {
+        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/editMessageText`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -194,8 +194,14 @@ async function updateMessageStatus(messageId, newStatus) {
             body: JSON.stringify({
                 chat_id: TELEGRAM_CHAT_ID,
                 message_id: messageId,
-                text: messageId.text.replace('상태: 처리중', '상태: ${newStatus}'),
-                reply_markup: message.reply_markup
+                reply_markup: {
+                    inline_keyboard: [[
+                        {
+                            text: '✅ 확인 완료',
+                            callback_data: `resolved_${messageId}`  // 이미 처리된 상태라서 실제로는 사용되지 않음
+                        }
+                    ]]
+                }
             })
         })
     } catch (error) {
@@ -205,7 +211,7 @@ async function updateMessageStatus(messageId, newStatus) {
 
 // 주기적으로 업데이트 확인하는 코드 추가
 setInterval(async () => {
-    const response = await fetch('https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates');
+    const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`);
     const data = await response.json();
     if (data.ok) {
         const updates = data.result;
@@ -255,8 +261,6 @@ sendButton.addEventListener('click', async () => {
 메시지: ${originalMessage}
 번역: ${translatedText}
 시간: ${currentTime}
-상태: 처리중
-메세지ID: ${Date.now()}  // 메세지 고유 ID 추가
 `;
 
     try {
@@ -265,15 +269,15 @@ sendButton.addEventListener('click', async () => {
 
         // 텔레그램 API 요청 디버깅 로그 추가
         console.log('Telegram request:', {
-            url: 'https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage',
+            url: `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
             body: {
                 chat_id: TELEGRAM_CHAT_ID,
                 text: telegramMessage,
                 reply_markup: {
                     inline_keyboard: [[
                         {
-                            text: '✅ 처리완료',
-                            callback_data: 'resolved_${roomNumber}_${messageId}'
+                            text: '⚠️ 확인 전',
+                            callback_data: `resolved_${roomNumber}_${messageId}`
                         }
                     ]]
                 }
@@ -292,8 +296,8 @@ sendButton.addEventListener('click', async () => {
                 reply_markup: {
                     inline_keyboard: [[
                         {
-                            text: '✅ 처리완료',
-                            callback_data: 'resolved_${roomNumber}_${messageId}'
+                            text: '⚠️ 확인 전',
+                            callback_data: `resolved_${roomNumber}_${messageId}`
                         }
                     ]]
                 }
