@@ -178,37 +178,6 @@ async function handleButtonClick(messageId) {
     }
 }
 
-// 클릭 이벤트 수신 함수
-async function checkForButtonClicks() {
-    try {
-        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates?offset=-1`);
-        const data = await response.json();
-        
-        if (data.ok && data.result.length > 0) {
-            const update = data.result[0];
-            if (update.callback_query) {
-                const messageId = update.callback_query.message.message_id;
-                await handleButtonClick(messageId);
-            }
-        }
-    } catch (error) {
-        console.error('Check updates error:', error);
-    }
-}
-
-// 주기적으로 버튼 클릭 체크 (5초마다)
-const checkInterval = 5000;
-setInterval(checkForButtonClicks, checkInterval);
-
-// 메시지 입력 이벤트
-messageInput.addEventListener('input', () => {
-    clearTimeout(translationTimeout);
-    translationTimeout = setTimeout(() => {
-        validateForm();
-        translateText(messageInput.value);
-    }, 500); // 500ms 디바운스
-});
-
 // 메시지 전송 버튼 이벤트
 sendButton.addEventListener('click', async () => {
     try {
@@ -216,8 +185,8 @@ sendButton.addEventListener('click', async () => {
         const translatedText = await translateText(originalMessage);
         const currentTime = new Date().toLocaleString();
     
-    // 텔레그램 메시지 형식
-    const telegramMessage = `
+        // 텔레그램 메시지 형식
+        const telegramMessage = `
 📢 새로운 요청
 방번호: ${roomNumber}
 메시지: ${originalMessage}
@@ -262,7 +231,7 @@ sendButton.addEventListener('click', async () => {
                     ]]
                 }
             }),
-            timeout: 10000   // 10초 타임아웃 설정정
+            timeout: 10000   // 10초 타임아웃 설정
         });
 
         // 응답 내용 확인
