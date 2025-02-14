@@ -39,27 +39,6 @@
             outline: none;
         }
 
-        .category-selector {
-            margin-bottom: 20px;
-        }
-
-        .category-btn {
-            padding: 10px 15px;
-            margin: 0 5px 5px 0;
-            border: 2px solid #e1e1e1;
-            border-radius: 20px;
-            background: white;
-            cursor: pointer;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .category-btn.active {
-            background-color: #0066ff;
-            color: white;
-            border-color: #0066ff;
-        }
-
         .back-btn {
             background-color: #6c757d;
             margin-right: 10px;
@@ -98,17 +77,6 @@
         </div>
 
         <div class="message-container">
-            <div class="form-group">
-                <!-- 여기에 id 추가 -->
-                <label id="categoryLabel">카테고리 선택</label>
-                <div class="category-selector">
-                    <button type="button" class="category-btn" data-category="cleaning">청소 요청</button>
-                    <button type="button" class="category-btn" data-category="amenity">어메니티 요청</button>
-                    <button type="button" class="category-btn" data-category="maintenance">수리 요청</button>
-                    <button type="button" class="category-btn" data-category="other">기타 문의</button>
-                </div>
-            </div>
-
             <div class="form-group">
                 <!-- 여기에 id 추가 -->
                 <label id="messageLabel" for="messageInput">메시지 내용</label>
