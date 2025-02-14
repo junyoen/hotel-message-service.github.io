@@ -211,9 +211,10 @@ messageInput.addEventListener('input', () => {
 
 // 메시지 전송 버튼 이벤트
 sendButton.addEventListener('click', async () => {
-    const originalMessage = messageInput.value.trim();
-    const translatedText = await translateText(originalMessage);
-    const currentTime = new Date().toLocaleString();
+    try {
+        const originalMessage = messageInput.value.trim();
+        const translatedText = await translateText(originalMessage);
+        const currentTime = new Date().toLocaleString();
     
     // 텔레그램 메시지 형식
     const telegramMessage = `
@@ -223,8 +224,6 @@ sendButton.addEventListener('click', async () => {
 번역: ${translatedText}
 시간: ${currentTime}
 `;
-
-    try {
         // 현재 시간으로 고유 ID 생성
         const messageId = Date.now();
 
@@ -278,8 +277,6 @@ sendButton.addEventListener('click', async () => {
         
         // 입력 필드 초기화
         messageInput.value = '';
-        categoryButtons.forEach(btn => btn.classList.remove('active'));
-        selectedCategory = '';
         translatedMessage.style.display = 'none';
         validateForm();
     } catch (error) {
