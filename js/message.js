@@ -186,6 +186,7 @@ function validateForm() {
 // 메시지 상태 업데이트 함수 추가
 async function updateMessageStatus(messageId, newStatus) {
     try {
+        console.log('Updating message status:', messageId);  // 디버깅용용
         const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/editMessageText`, {
             method: 'POST',
             headers: {
@@ -198,31 +199,40 @@ async function updateMessageStatus(messageId, newStatus) {
                     inline_keyboard: [[
                         {
                             text: '✅ 확인 완료',
-                            callback_data: `resolved_${messageId}`  // 이미 처리된 상태라서 실제로는 사용되지 않음
+                            callback_data: `completed`  // 이미 처리됨을 나타내는 상태
                         }
                     ]]
                 }
             })
-        })
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('상태 업데이트 실패:', error);
+        }
     } catch (error) {
         console.error('상태 업데이트 실패:', error);
     }
 }
 
-// 주기적으로 업데이트 확인하는 코드 추가
+// 주기적으로 업데이트 확인하는 코드
 setInterval(async () => {
-    const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`);
-    const data = await response.json();
-    if (data.ok) {
-        const updates = data.result;
-        updates.forEach(update => {
-            if (update.callback_query) {
-                const {date: callbackData, message} = update.callback_query;
-                if (callbackData.startsWith('resolved_')) {
-                    updateMessageStatus(message.message_id, '✅ 처리완료');
+    try {
+        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`);
+        const data = await response.json();
+        console.log('Received updates:', data);  // 디버깅용
+
+        if (data.ok) {
+            const updates = data.result;
+            updates.forEach(update => {
+                if (update.callback_query) {
+                    console.log('Callback query received:', update.callback_query);  // 디버깅용
+                    updateMessageStatus(update.callback_query.message.message_id);
                 }
-            }
-        })
+            });
+        }
+    } catch (error) {
+        console.error('업데이트 확인 실패:', error);
     }
 }, 5000);
 
