@@ -1,8 +1,12 @@
 // Azure Translator API 설정
+<<<<<<< HEAD
 const TRANSLATOR_KEY = '9QIOsH4sQRqW8crgBjJE4X7BKMSMsRbDnXy7OwS61QV2yN4GLNBsJQQJ99BBAC3pKaRXJ3w3AAAbACOGDxZf';
 const TRANSLATOR_REGION = 'eastasia';
 const TRANSLATOR_ENDPOINT = 'https://api.cognitive.microsofttranslator.com';
 
+=======
+const API_URL = 'https://hotel-api-proxy.vercel.app/api';
+>>>>>>> bec3777072087c0dff3ac86531c46b117504d575
 // Telegram 설정
 const TELEGRAM_BOT_TOKEN = '7641859647:AAF9SGLlCpkXAQNQFt9SBQJkJYDgGsdXSts';
 const TELEGRAM_CHAT_ID = '7797882571';
@@ -124,13 +128,16 @@ async function translateText(text) {
         const response = await fetch('https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=ko', {
             method: 'POST',
             headers: {
+<<<<<<< HEAD
                 'Ocp-Apim-Subscription-Key': TRANSLATOR_KEY,
                 'Ocp-Apim-Subscription-Region': TRANSLATOR_REGION,
+=======
+>>>>>>> bec3777072087c0dff3ac86531c46b117504d575
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify([{
+            body: JSON.stringify({
                 text: text
-            }])
+            })
         });
 
         if (!response.ok) {
