@@ -1,5 +1,5 @@
 // Azure Translator API 설정
-const API_URL = 'https://hotel-api-proxy-19ajb5ge3-joeykims-projects.vercel.app/api';
+const API_URL = 'https://hotel-api-proxy-k8s08o1yk-joeykims-projects.vercel.app/api';
 
 // Telegram 설정
 const TELEGRAM_BOT_TOKEN = '7641859647:AAF9SGLlCpkXAQNQFt9SBQJkJYDgGsdXSts';
