@@ -1,7 +1,5 @@
 // Azure Translator API 설정
-const TRANSLATOR_KEY = '9QIOsH4sQRqW8crgBjJE4X7BKMSMsRbDnXy7OwS61QV2yN4GLNBsJQQJ99BBAC3pKaRXJ3w3AAAbACOGDxZf';
-const TRANSLATOR_REGION = 'eastasia';
-const TRANSLATOR_ENDPOINT = 'https://api.cognitive.microsofttranslator.com';
+const API_URL = 'https://hotel-api-proxy-34vxhgd7t-joeykims-projects.vercel.app/api';
 
 // Telegram 설정
 const TELEGRAM_BOT_TOKEN = '7641859647:AAF9SGLlCpkXAQNQFt9SBQJkJYDgGsdXSts';
@@ -87,7 +85,7 @@ async function translateText(text) {
 
     try {
         // 언어 감지는 자동으로 하고, 무조건 한국어로 번역
-        const response = await fetch('https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=ko', {
+        const response = await fetch(`${API_URL}/translate`, {
             method: 'POST',
             headers: {
                 'Ocp-Apim-Subscription-Key': TRANSLATOR_KEY,
