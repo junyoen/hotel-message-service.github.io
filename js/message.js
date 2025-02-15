@@ -1,5 +1,5 @@
 // Azure Translator API 설정
-const API_URL = 'https://hotel-api-proxy-34vxhgd7t-joeykims-projects.vercel.app/api';
+const API_URL = process.env.API_URL;
 
 // Telegram 설정
 const TELEGRAM_BOT_TOKEN = '7641859647:AAF9SGLlCpkXAQNQFt9SBQJkJYDgGsdXSts';
@@ -88,8 +88,8 @@ async function translateText(text) {
         const response = await fetch(`${API_URL}/translate`, {
             method: 'POST',
             headers: {
-                'Ocp-Apim-Subscription-Key': TRANSLATOR_KEY,
-                'Ocp-Apim-Subscription-Region': TRANSLATOR_REGION,
+                'Ocp-Apim-Subscription-Key': process.env.TRANSLATOR_KEY,
+                'Ocp-Apim-Subscription-Region': process.env.TRANSLATOR_REGION,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify([{
