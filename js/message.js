@@ -1,5 +1,5 @@
 // Azure Translator API 설정
-const API_URL = `https://${window.location.hostname}/api`;
+const API_URL = `'%%API_URL%%'`;
 
 // Telegram 설정
 const TELEGRAM_BOT_TOKEN = '7641859647:AAF9SGLlCpkXAQNQFt9SBQJkJYDgGsdXSts';
