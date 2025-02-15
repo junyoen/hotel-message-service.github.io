@@ -89,9 +89,9 @@ async function translateText(text) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify([{
+            body: JSON.stringify({
                 text: text
-            }])
+            })
         });
 
         if (!response.ok) {
