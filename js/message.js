@@ -88,8 +88,8 @@ async function translateText(text) {
         const response = await fetch(`${API_URL}/translate`, {
             method: 'POST',
             headers: {
-                'Ocp-Apim-Subscription-Key': TRANSLATOR_KEY,
-                'Ocp-Apim-Subscription-Region': TRANSLATOR_REGION,
+                'Ocp-Apim-Subscription-Key': window.TRANSLATOR_KEY,
+                'Ocp-Apim-Subscription-Region': window.TRANSLATOR_REGION,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify([{
