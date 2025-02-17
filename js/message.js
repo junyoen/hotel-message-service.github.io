@@ -1,16 +1,10 @@
-// Azure Translator API 설정
-const TRANSLATOR_KEY = '9QIOsH4sQRqW8crgBjJE4X7BKMSMsRbDnXy7OwS61QV2yN4GLNBsJQQJ99BBAC3pKaRXJ3w3AAAbACOGDxZf';
-const TRANSLATOR_REGION = 'eastasia';
-const TRANSLATOR_ENDPOINT = 'https://api.cognitive.microsofttranslator.com';
-
-// Telegram 설정
-const TELEGRAM_BOT_TOKEN = '7641859647:AAF9SGLlCpkXAQNQFt9SBQJkJYDgGsdXSts';
-const TELEGRAM_CHAT_ID = '7797882571';
-
-// URL 파라미터에서 값 가져오기
+// message.js
 const urlParams = new URLSearchParams(window.location.search);
 const roomNumber = urlParams.get('room');
 const selectedLanguage = urlParams.get('lang');
+
+// Worker URL
+const WORKER_URL = 'https://hotel-message-service.joeykim9010.workers.dev';
 
 // DOM 요소
 const roomInfo = document.getElementById('roomInfo');
@@ -27,15 +21,7 @@ const languageNames = {
     'zh': '中文'
 };
 
-// 번역을 위한 언어 코드 매핑
-const translateLanguageCodes = {
-    'ko': 'ko',
-    'en': 'en',
-    'ja': 'ja',
-    'zh': 'zh-Hans'
-};
-
-// 다국어 텍스트 정의
+// 다국어 텍스트
 const translations = {
     'ko': {
         pageTitle: '메시지 작성',
@@ -78,6 +64,32 @@ const translations = {
 // 디바운스 타이머
 let translationTimeout;
 
+// 버튼 클릭 체크 함수
+async function checkForButtonClicks() {
+    try {
+        const response = await fetch(`${WORKER_URL}/api/check-clicks`);
+        const data = await response.json();
+        
+        if (data.clicked && data.messageId) {
+            await fetch(`${WORKER_URL}/api/update-button`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    messageId: data.messageId
+                })
+            });
+        }
+    } catch (error) {
+        console.error('Check updates error:', error);
+    }
+}
+
+// 주기적으로 버튼 클릭 체크 (5초마다)
+const checkInterval = 5000;
+setInterval(checkForButtonClicks, checkInterval);
+
 // 번역 함수
 async function translateText(text) {
     if (!text.trim()) {
@@ -86,29 +98,25 @@ async function translateText(text) {
     }
 
     try {
-        const response = await fetch('https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=ko', {
+        const response = await fetch(`${WORKER_URL}/api/translate`, {
             method: 'POST',
             headers: {
-                'Ocp-Apim-Subscription-Key': TRANSLATOR_KEY,
-                'Ocp-Apim-Subscription-Region': TRANSLATOR_REGION,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify([{
-                text: text
-            }])
+            body: JSON.stringify({
+                text: text,
+                targetLanguage: 'ko'
+            })
         });
 
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`Translation failed: ${response.status}`);
         }
 
         const data = await response.json();
-        if (data && data[0] && data[0].translations && data[0].translations[0]) {
-            const translatedText = data[0].translations[0].text;
-            translatedMessage.textContent = translatedText;
-            translatedMessage.style.display = 'block';
-            return translatedText;
-        }
+        translatedMessage.textContent = data.translatedText;
+        translatedMessage.style.display = 'block';
+        return data.translatedText;
     } catch (error) {
         console.error('Translation error:', error);
         translatedMessage.textContent = '번역 중 오류가 발생했습니다.';
@@ -121,61 +129,6 @@ function validateForm() {
     const isValid = messageInput.value.trim().length > 0;
     sendButton.disabled = !isValid;
 }
-
-// 버튼 클릭 이벤트 처리 함수
-async function handleButtonClick(messageId) {
-    try {
-        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/editMessageReplyMarkup`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                chat_id: TELEGRAM_CHAT_ID,
-                message_id: messageId,
-                reply_markup: {
-                    inline_keyboard: [[
-                        {
-                            text: '✅ 확인 완료',
-                            callback_data: 'completed'
-                        }
-                    ]]
-                }
-            })
-        });
-
-        if (!response.ok) {
-            console.error('Button update failed:', await response.text());
-            return false;
-        }
-        return true;
-    } catch (error) {
-        console.error('Button click handler error:', error);
-        return false;
-    }
-}
-
-// 클릭 이벤트 수신 함수
-async function checkForButtonClicks() {
-    try {
-        const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates?offset=-1`);
-        const data = await response.json();
-        
-        if (data.ok && data.result.length > 0) {
-            const update = data.result[0];
-            if (update.callback_query) {
-                const messageId = update.callback_query.message.message_id;
-                await handleButtonClick(messageId);
-            }
-        }
-    } catch (error) {
-        console.error('Check updates error:', error);
-    }
-}
-
-// 주기적으로 버튼 클릭 체크
-const checkInterval = 5000;
-setInterval(checkForButtonClicks, checkInterval);
 
 // 메시지 입력 이벤트
 messageInput.addEventListener('input', () => {
@@ -212,54 +165,41 @@ sendButton.addEventListener('click', async () => {
     try {
         const originalMessage = messageInput.value.trim();
         const translatedText = await translateText(originalMessage);
-        const currentTime = new Date().toLocaleString();
-        const messageId = Date.now();
-
-        // 텔레그램 메시지 형식
-        const telegramMessage = `
-📢 새로운 요청
-방번호: ${roomNumber}
-메시지: ${originalMessage}
-번역: ${translatedText}
-시간: ${currentTime}
-`;
-
-        const telegramResponse = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+        
+        const response = await fetch(`${WORKER_URL}/api/send-message`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                chat_id: TELEGRAM_CHAT_ID,
-                text: telegramMessage,
-                reply_markup: {
-                    inline_keyboard: [[
-                        {
-                            text: '⚠️ 확인 전',
-                            callback_data: `resolved_${roomNumber}_${messageId}`
-                        }
-                    ]]
-                }
+                roomNumber,
+                originalMessage,
+                translatedText,
+                timestamp: new Date().toISOString()
             })
         });
 
-        if (!telegramResponse.ok) {
+        if (!response.ok) {
             throw new Error('메시지 전송 실패');
         }
 
-        alert('메시지가 전송되었습니다.');
-        messageInput.value = '';
-        translatedMessage.style.display = 'none';
-        validateForm();
-
+        const result = await response.json();
+        
+        if (result.success) {
+            alert('메시지가 전송되었습니다.');
+            messageInput.value = '';
+            translatedMessage.style.display = 'none';
+            validateForm();
+        } else {
+            throw new Error('메시지 전송 실패');
+        }
     } catch (error) {
-        console.error('메시지 전송 실패:', error);
+        console.error('Error:', error);
         alert('메시지 전송에 실패했습니다. 다시 시도해 주세요.');
     }
 });
 
-// 페이지 로드 시 초기화
+// 페이지 로드 시 실행
 document.addEventListener('DOMContentLoaded', () => {
     updatePageLanguage(selectedLanguage);
-    validateForm();
 });
